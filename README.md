@@ -1,0 +1,1 @@
+YBStore is an innovative e-commerce website built with Next.js, designed to offer a seamless and dynamic shopping experience. Leveraging the power of Next.js, YBStore ensures fast page loads, optimized performance, and a responsive design that caters to users on any device.
