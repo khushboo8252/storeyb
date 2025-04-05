@@ -4,17 +4,19 @@ import imageslider from "../public/imageslider.gif";
 
 const ImageSlider = () => {
   return (
-    <div className="relative w-full h-max-content m-0 z-5 rounded-5 overflow-hidden">
-      <div className="w-full h-full">
-        <Image
-          src={imageslider}
-          alt="Image Slider"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
-      </div>
-      <button className="absolute bottom-5 left-1/2 transform -translate-x-1/2 bg-teal-900 font-bold h-12 w-36 text-white rounded-2xl sm:rounded-2xl sm:mt-10">
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden rounded-none sm:rounded-lg">
+      {/* Responsive Image */}
+      <Image
+        src={imageslider}
+        alt="Image Slider"
+        fill
+        className="object-cover w-full h-full"
+        quality={100}
+        priority
+      />
+
+      {/* CTA Button */}
+      <button className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 bg-teal-900 text-white text-sm sm:text-base font-semibold px-6 py-2 sm:px-8 sm:py-3 rounded-xl shadow-md hover:bg-teal-800 transition-all duration-300">
         Start Selling
       </button>
     </div>

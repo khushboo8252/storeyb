@@ -7,64 +7,44 @@ import fashion from "../public/fashion.png";
 
 const Video = () => {
   return (
-    <div>
-      <div className="pt-10 sm:pt-24">
-        <video src="/hero.mp4" autoPlay loop muted className="w-full h-auto">
+    <div className="w-full">
+      {/* Video Section */}
+      <div className="pt-10 sm:pt-20 md:pt-24">
+        <video
+          src="/hero.mp4"
+          autoPlay
+          loop
+          muted
+          className="w-full h-auto object-cover rounded-none"
+        >
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-[80px] rounded-lg border-2 border-solid border-gray-200 p-4">
-        <div className="flex flex-col items-center rounded-lg shadow-lg p-4 bg-white">
-          <Image
-            src={travel}
-            alt="travel"
-            width={128}
-            height={128}
-            className="w-24 h-24"
-          />
-          <h3 className="mt-2 text-center font-bold text-[1.25rem] text-gray-800">
-            Travel Itinerary
-          </h3>
-        </div>
 
-        <div className="flex flex-col items-center rounded-lg shadow-lg p-4 bg-white">
-          <Image
-            src={custom}
-            alt="custom"
-            width={128}
-            height={143}
-            className="w-24 h-24"
-          />
-          <h3 className="mt-2 text-center font-bold text-[1.25rem] text-gray-800">
-            Custom Merchandise
-          </h3>
-        </div>
-
-        <div className="flex flex-col items-center rounded-lg shadow-lg p-4 bg-white">
-          <Image
-            src={digital}
-            alt="digital"
-            width={128}
-            height={129}
-            className="w-24 h-24"
-          />
-          <h3 className="mt-2 text-center font-bold text-[1.25rem] text-gray-800">
-            Digital Content
-          </h3>
-        </div>
-
-        <div className="flex flex-col items-center rounded-lg shadow-lg p-4 bg-white">
-          <Image
-            src={fashion}
-            alt="fashion"
-            width={128}
-            height={97}
-            className="w-24 h-24"
-          />
-          <h3 className="mt-2 text-center font-bold text-[1.25rem] text-gray-800">
-            Fashion Brand
-          </h3>
-        </div>
+      {/* Features Grid Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-32 py-10">
+        {[ 
+          { img: travel, alt: "travel", label: "Travel Itinerary" },
+          { img: custom, alt: "custom", label: "Custom Merchandise" },
+          { img: digital, alt: "digital", label: "Digital Content" },
+          { img: fashion, alt: "fashion", label: "Fashion Brand" },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 bg-white"
+          >
+            <Image
+              src={item.img}
+              alt={item.alt}
+              width={128}
+              height={128}
+              className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
+            />
+            <h3 className="mt-4 text-center text-base sm:text-lg font-semibold text-gray-800">
+              {item.label}
+            </h3>
+          </div>
+        ))}
       </div>
     </div>
   );
